@@ -1,64 +1,75 @@
-# spotifyandweatherdata
-
-Music and Weather: ​Analyzing the Impact of Varying Weather on Music Choices
-
-Project Description:
-This project investigates the connection between my music listening habits and daily weather. By correlating my Spotify music listening history (obtained through Spotify’s data request feature) with daily weather data, I aim to answer several questions:
-
-How does daily weather affect the types of music I listen to?
-Are there any noticeable differences in my listening frequency or duration depending on the weather conditions?
-
-Dataset:
-Spotify Data, Spotify API
-Source: Spotify data request feature. I will obtain my personal listening history as a JSON file via Spotify Account Privacy Settings.
+Spotify and Weather Data: 
+WEBSITE: https://dogaii.github.io/
+Analyzing the Impact of Varying Weather on Listening Habits
+Project Description
+This project investigates the connection between my music listening habits and daily weather conditions. By correlating 1 year of Spotify music listening history with 1 year of weather data, I aim to understand how external factors such as temperature and precipitation affect personal music habits.
+Dataset
+Spotify Data
+Source: Spotify data request feature
 Features:
-track_name: Name of the track.
-artist: Artist performing the track.
-playback_timestamp: Timestamp of the playback.
-audio_features: derived from Spotify’s metadata (energy, valence, tempo).
-
+track_name: Name of the track
+artist: Artist performing the track
+playback_timestamp: Timestamp of the playback
+ms_played: Total playback duration in milliseconds
 Weather Data
-Source: I will obtain historical weather data using OpenWeather API.
+Source: Visual Crossing Weather API
 Features:
-Temperature, humidity, weather conditions (sunny, rainy, foggy, snowy).
-I aim for timestamps to match Spotify listening data.
+avg_temp: Daily average temperature (°C)
+precipitation: Daily precipitation levels (mm)
+weather_condition: Categorized as Sunny, Rainy, Cold, or Hot, based on temperature and precipitation thresholds
+
 
 Project Workflow
+1. Data Collection
+Spotify data was requested using Spotify’s privacy settings.
+Historical weather data for the corresponding dates and locations was fetched using the Visual Crossing API.
+2. Data Preprocessing
+Parsed Spotify JSON files with columns to extract playback features such as track name, artist, and listening time.
 
-Data Collection:
 
-I requested Spotify data using Spotify’s data request feature.
-I obtained weather data for relevant time periods and locations using OpenWeather API.
+Spotify and weather data were combined with timestamp alignment.
+Weather conditions were categorized based on temperature and precipitation thresholds.
 
-Data Preprocessing:
+3. Exploratory Data Analysis (EDA)
+Analyzed listening time and frequency under changing weather conditions.
+Seasonal trends and changes in listening habits were examined.
+4. Documentation and Reporting
+Created visualizations to showcase trends and insights.
+Compiled findings into a detailed report to summarize key observations.
 
-I will parse Spotify JSON files to extract relevant features (track name, play time).
+Project Goals
+The primary goal was to investigate how changing weather conditions, such as temperature and precipitation, affect the frequency of music listening.
 
-I will combine Spotify data with weather data using timestamp alignment.
-
-Exploratory Data Analysis (EDA):
-
-I will visually present trends in my listening preferences across different weather conditions.
-Relationships between audio features (energy, tempo) and weather measurements (temperature, rain) will be revealed.
-
-Documentation and Reporting:
-
-Visualizations were created to showcase the insights.
-I will compile the relationships found into a comprehensive report.
-
-Project Goals:
-
-Understanding Patterns: Discover how an external factor, weather, affects my personal music habits.
-
-Tools and Libraries Used:
-Programming Language: Python
-Libraries:
+Tools and Libraries Used
+Programming Language
+Python
+Libraries
 Data Processing: pandas, numpy
-Visualization: matplotlib, seaborn, plotly
-Machine Learning: scikit-learn
-Weather Data Retrieval: requests, json
+Visualization: matplotlib, seaborn, wordcloud
+Data Retrieval: requests, json
 
-Key Visualizations and Findings (To Be Updated):
-Genre Trends by Weather: Bar charts showing how weather affects genre preferences.
-Mood Score Analysis: Scatter plots that relate Spotify audio characteristics like energy and value to weather data.
-Listening Habits Over Time: Time-series analysis of listening frequency across seasons.
+Key Visualizations and Findings
+Key Visualizations
+Bar Charts: Displayed total listening duration under different weather conditions (Sunny, Rainy, Cold, Hot).
+Heatmap: Showed the correlation between average temperature, precipitation, and listening duration.
+Boxplots: Highlighted the distribution of daily listening duration across weather conditions.
+2D Density Plot: Visualized the relationship between average temperature and playback duration.
+Hexbin Plot: Represented point density for temperature versus listening duration.
+Scatter Plots: Illustrated the relationship between weather metrics and listening behavior, with regression lines to identify trends.
+Time-Series Line Plots: Tracked seasonal changes in listening habits over the year.
+Findings
+Weather Effects:
+
+Listening times were highest on sunny days, followed by rainy weather.
+Rainy weather also showed significant amounts of listening, likely related to indoor activities and increased comfort-seeking behaviors.
+
+Temperature Trends:
+
+As shown in the graphs, greater play times were observed during moderate temperatures (e.g., spring and fall).
+
+Seasonal Listening Behavior:
+
+Play times tended to be consistent with periods of favorable or stable weather conditions rather than extreme climates.
+
+
+
